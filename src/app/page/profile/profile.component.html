@@ -1,0 +1,32 @@
+<div class="container" style="margin-top: 70px;">
+  <div class="row" style="justify-content: center;">
+    <mat-card class="card" style="margin-top: 70px;" *ngFor="let customer of this.customer">
+      <div class="row">
+        <div style="text-align: center;">
+          <h1 style="font-size: 35px; margin-top: 10px;">Information</h1>
+        </div>
+        <hr>
+        <div class="row" style="margin-top: 40px; margin-left: 110px;">
+          <div class="col-6">
+            <span class="fontsize2">Id : </span>
+            <span class="fontsize">{{customer.cid}}</span>
+          </div>
+          <div class="col-6">
+            <span class="fontsize2">Name : </span>
+            <span class="fontsize">{{customer.name}}</span>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 40px; margin-left: 110px;">
+          <div class="col-6">
+            <span class="fontsize2">Email : </span>
+            <span class="fontsize">{{customer.email}}</span>
+          </div>
+          <div class="col-6" >
+            <span class="fontsize2">Phone : </span>
+            <span class="fontsize">{{customer.phone}}</span>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

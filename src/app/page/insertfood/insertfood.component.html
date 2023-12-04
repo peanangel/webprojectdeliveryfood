@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <label style="width: 400px; margin-top: 100px; margin-left: 30%; font-size: 25px; font-weight: bold; color: rgb(246, 147, 18);">เพิ่มข้อมูลอาหาร</label>
+    <form #insertForm="ngForm" (ngSubmit)="addNewFood()">
+    <div class="col-6 " style="margin-top: 30px; margin-left: 30%;">
+      <label class="fontSize" style="margin-top: 10px; width: 70px;">Name</label>
+      <div class="form-group">
+        <input type="text" class="form-control" [ngClass]="{'is-invalid':name.touched && name.invalid}" id="name" placeholder="Name" name="name" #name="ngModel" [(ngModel)]="model.name" required>
+      </div>
+      <span class="invalid-feedback">name can't be blank.</span>
+      <div class="row">
+
+        <div class="col-7">
+          <div class="row">
+            <label class="fontSize" style="margin-top: 10px; width: 70px;">Type</label>
+          </div>
+          <div class="row">
+            <span>
+              <select id="type"  name = "type" style=" margin-top: 10px; width: 200px; height: 40px; font-size: 18px; border-radius: 10%;"   #type="ngModel" [(ngModel)]="model.type" required>
+                <option *ngFor="let typefood of types" value="{{typefood.typeid}}">{{typefood.type}}</option>
+              </select>
+              <button class="button" style="margin-left: 4%;">
+                <span (click)="addNew()" class="spanbutton">เพิ่มประเภทอาหาร</span>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="row">
+            <label class="fontSize" style="margin-top: 10px; width: 50px;">Price</label>
+          </div>
+          <div class="row">
+            <input type="text" class="form-control" [ngClass]="{'is-invalid':price.touched && price.invalid}" id="price" placeholder="Price" name="price" #price="ngModel" [(ngModel)]="model.price" required>
+          </div>
+
+        </div>
+
+      </div>
+
+      <label class="fontSize" style="margin-top: 10px; width: 400px;"  >Image</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':image.touched && image.invalid}" id="image" placeholder="URL" name="image" #image="ngModel" [(ngModel)]="model.image" required>
+
+      <label class="fontSize" style="margin-top: 10px; width: 70px;">Description</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':description.touched && description.invalid}" id="description" placeholder="description" name="description" #description="ngModel" [(ngModel)]="model.description" required>
+
+      <button class="button" style="margin-left: 77%; margin-top: 10px;"[disabled]="insertForm.invalid">
+        <span class="spanbutton">Add Food</span>
+      </button>
+    </div>
+  </form>
+  </div>
+</div>
+

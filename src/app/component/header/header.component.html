@@ -1,0 +1,40 @@
+<mat-toolbar
+  class="fxLayout dark app-toolbar"
+  style="width: 100%;
+  height: 80px;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Prompt', sans-serif;
+  background-color: white;
+  color: rgb(245, 149, 6);
+  font-size: 25px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.377);
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+  "
+
+  >
+
+  <div class="fxLayout" style="margin-left: 50px; flex-direction: row; align-items: center ; text-align: center; justify-content: center;  background-color: black; border-radius: 5px; width: 200px; height: 40px;">
+    <mat-icon >fastfood</mat-icon>
+    <span style="color: rgb(245, 149, 6);">&nbsp;Order Food</span>
+  </div>
+  <div style="margin-right: 100px; font-size: 50px;">
+
+    <button
+    mat-flat-button style="background-color: white ; color: rgb(245, 149, 6) ; margin: 10px;"
+    [routerLink]="['/firstpage', { outlets: { shopoutlet: ['main']} }]"
+    >
+      Home
+    </button>
+    <button mat-flat-button   style="background-color: white ; color: rgb(245, 149, 6) ; margin: 10px;" [routerLink]="['/firstpage', { outlets: { shopoutlet: ['shop']} }]">Shop</button>
+    <button mat-flat-button   style="background-color: white ; ;color: rgb(245, 149, 6) ;margin: 10px;   " [routerLink]="['/firstpage', { outlets: { shopoutlet: ['cartfood']} }]" ><mat-icon style="font-size: 20px;" matBadgeSize="small" matBadgeColor="warn"  >add_shopping_cart</mat-icon> </button>
+    <button mat-flat-button   style="background-color: white ; color: rgb(245, 149, 6) ; margin: 10px;" [routerLink]="['/firstpage', { outlets: { shopoutlet: ['notifications']} }]" ><mat-icon style="font-size: 20px;"   matBadgeSize="small" matBadgeColor="warn">notifications</mat-icon></button>
+    <button mat-flat-button   style="background-color: white ; color: rgb(245, 149, 6) ; margin: 10px;" [routerLink]="['/firstpage', { outlets: { shopoutlet: ['profile']} }]" ><mat-icon style="font-size: 20px;" matBadgeSize="small" matBadgeColor="warn">account_circle</mat-icon></button>
+    <button mat-flat-button   style="background-color: white ; color: rgb(245, 149, 6) ; margin: 10px;" routerLink="/" >Logout</button>
+  </div>
+
+</mat-toolbar>
+
+<!-- <img class="icon" style=" width: 30px;height: 30px; " src="https://cdn-icons-png.flaticon.com/512/2543/2543378.png" alt="">  -->

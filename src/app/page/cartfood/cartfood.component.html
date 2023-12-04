@@ -1,0 +1,212 @@
+<!--
+<ng-container *ngIf="this.carts.length>0">
+<div class="contianer-fluid" >
+  <div class="row" >
+  <div style="color: whitesmoke; font-size: 30px; margin-top: 200px; margin-left: 190px; ">
+    <span  [routerLink]="['/firstpage', { outlets: { shopoutlet: ['main']} }]" style="cursor: pointer;" class="sline-in">Home /</span><span>&nbsp;cart</span>
+  </div>
+</div>
+</div>
+
+
+<div class="container-fluid" style="width: 100%;">
+  <div class="row">
+    <div class="col-7">
+      <mat-card class="example-card">
+      <div>
+        <div style="margin-top: 15px;">
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 200px;">PRODUCT</span>
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 58px;">PRICE</span>
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 70px;">QUANTITY</span>
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 45px;">SUBTOTAL</span>
+        </div>
+
+        <hr>
+        <div class="row"*ngFor="let cart of this.carts">
+          <div class="col-4" style="margin-top: 8px; width: 200px;" >
+            <mat-icon class="coloricon" style="margin-left: 20px;">highlight_off</mat-icon>
+            <img style="width: 100px; height: 110px; margin-left: 20px;" src="{{cart.image}}" alt="">
+          </div>
+          <div class="col-2" style="margin: auto;">
+            <span style="font-size: 15px;" >{{cart.name}}</span>
+          </div>
+          <div class="col-2" style="margin: auto;">
+            <span style="font-size: 15px;" >{{cart.price}}</span>
+          </div>
+          <div class="col-2" style="margin: auto;">
+            <mat-form-field class="matform">
+              <input class="input" matInput value="{{cart.amount}}" #message type="number">
+            </mat-form-field>
+          </div>
+          <div class="col-2" style="margin: auto;">
+            <span>{{cart.price*cart.amount}}</span>
+          </div>
+        </div>
+        <hr>
+      </div>
+      </mat-card>
+    </div> -->
+
+    <!-- Total -->
+    <!-- <div class="col-5">
+      <mat-card class="example-card2">
+        <div style=" margin-top: 10px;">
+          <span style="margin-left: 10px; font-size: 18px; font-weight: bold;">CART TOTALS</span>
+          <div class="row"  style="margin-top: 30px;">
+            <div class="col-9">
+              <span style="font-size: 17px; margin-left: 20px;">Subtotal</span>
+            </div>
+            <div class="col-3">
+              <span style="font-size: 17px; margin-left: 20px;">$939</span>
+            </div>
+          </div>
+          <div class="row"  style="margin-top: 10px;">
+            <div class="col-9">
+              <span style="font-size: 17px; margin-left: 20px;">Total</span>
+            </div>
+            <div class="col-3">
+              <span style="font-size: 17px; margin-left: 20px;">$939</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" style="margin-top: 30px;">
+              <button (click)="addNew()"  class="button" style="margin-left: 199px;">
+                <span class="spanbutton">Proceed to Checkout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+</ng-container> -->
+<div>
+
+
+<div class="contianer-fluid" >
+  <div class="row" >
+  <div style="color: whitesmoke; font-size: 30px; margin-top: 200px; margin-left: 190px; ">
+    <span  [routerLink]="['/firstpage', { outlets: { shopoutlet: ['main']} }]" style="cursor: pointer;" class="sline-in">Home /</span><span>&nbsp;cart</span>
+  </div>
+</div>
+</div>
+
+<!--  -->
+<div style="margin: 15px;">
+  <span *ngFor="let cart of this.carts; let i = index">
+      <span>
+        {{i+1}}. {{cart.name}}
+      </span>
+    </span>
+</div>
+<ng-container *ngIf="carts.length >0">
+<div class="container-fluid" style="width: 100%;">
+  <div class="row">
+    <div class="col-7">
+      <mat-card class="example-card">
+      <div>
+        <div style="margin-top: 15px;">
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 200px;">PRODUCT</span>
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 58px;">PRICE</span>
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 70px;">QUANTITY</span>
+          <span style="font-size: 16PX; font-weight: bold; margin-left: 45px;">SUBTOTAL</span>
+        </div>
+
+
+          <mat-card class="food-card" style="margin-top: 20px;" *ngFor="let cart of this.carts; let i = index">
+            <div class="row" style="margin-top: 20px;">
+            <div class="col-4" style="width: 200px;">
+
+                <span>
+                <button (click)="delete(cart)" mat-mini-fab style="margin-left: 10px; background-color: white; width: 40px; height: 40px;" aria-label="Example icon button with a plus one icon" >
+                  <mat-icon class="coloricon">highlight_off</mat-icon>
+                </button>
+
+              <!-- <mat-icon  class="coloricon" style="margin-left: 15px;"></mat-icon> -->
+              <img style="width: 100px; height: 110px; margin-left: 20px;" src="{{cart.image}}" alt=""></span>
+            </div>
+            <div class="col-2" style="margin: auto;">
+              <span style="font-size: 15px;" >{{cart.name}}</span>
+            </div>
+            <div class="col-2" style="margin: auto;">
+              <span style="font-size: 15px;" >{{cart.price}}</span>
+            </div>
+            <div class="col-2" style="margin: auto;">
+              <!-- <p *ngIf="isflag == false">{{cart.amount}}</p> -->
+              <!-- <p *ngIf="isflag == true">{{qty[i]}}</p> -->
+              <button (click)="minus(cart)" style=" width: 10px ; height: 30px; background-color:rgb(245, 149, 6) ;" class="btn btn-increment btn-work" type="button">-</button>
+              <input style="width: 30px; text-align: center;"value="{{cart.amount}}" min="0" max="5" step="10"/>
+              <button (click)="plus(cart)" style="width: 10px; height: 30px; background-color:rgb(245, 149, 6)" class="btn btn-decrement btn-work" type="button">+</button>
+
+            </div>
+            <div class="col-2" style="margin: auto;">
+              <span>{{cart.price*cart.amount}}</span>
+            </div>
+          </div>
+          </mat-card>
+
+      </div>
+      </mat-card>
+    </div>
+    <!-- Total -->
+    <div class="col-5" >
+      <mat-card class="example-card2">
+        <div style=" margin-top: 10px;">
+          <span style="margin-left: 10px; font-size: 18px; font-weight: bold;">CART TOTALS</span>
+
+          <!--  -->
+          <div class="row"  style="margin-top: 30px;">
+            <div class="col-9">
+              <span style="font-size: 17px; margin-left: 20px;">amount food</span>
+            </div>
+            <div class="col-3">
+              <span style="font-size: 17px; margin-left: 20px;">{{this.carts.length}}</span>
+            </div>
+          </div>
+
+
+          <div class="row"  style="margin-top: 10px;">
+            <div class="col-9">
+              <span style="font-size: 17px; margin-left: 20px;">Shipping</span>
+            </div>
+            <div class="col-3">
+              <span style="font-size: 17px; margin-left: 20px;">15</span>
+            </div>
+          </div>
+          <div class="row"  style="margin-top: 10px;">
+            <div class="col-9">
+              <span style="font-size: 17px; margin-left: 20px;">Total</span>
+            </div>
+            <div class="col-3">
+              <span style="font-size: 17px; margin-left: 20px;">{{total+15}}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" style="margin-top: 30px;">
+              <button (click)="payTheBill()"  class="button" style="margin-left: 199px;">
+                <span class="spanbutton">Proceed to Checkout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+</ng-container>
+<ng-container *ngIf="carts.length===0">
+  <div class="container">
+    <div class="card">
+      <div class="center">
+        <h4>Your cart is empty!</h4>
+        <h6>Add item to it now</h6>
+        <div class="btn" [routerLink]="['/firstpage', { outlets: { shopoutlet: ['shop']}}]" style="background-color: rgb(245, 149, 6);">
+          Shop now
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+</div>

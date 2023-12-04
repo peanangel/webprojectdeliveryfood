@@ -1,0 +1,60 @@
+<div class="contianer">
+  <div class="row" style="text-align: center; align-items: center; justify-content: center;" *ngFor="let info of this.orderselect;">
+    <p style="margin-top: 30px; margin-left: 20px; font-size: 30px; font-weight: bold;">รายการสั่งซื้อ</p>
+    <mat-card class="card" >
+      <div class="row" >
+          <p class="font">Order Food</p>
+      </div>
+      <hr>
+      <div class="row" style="text-align: left; ">
+        <div class="col-8">
+
+          <p style="margin-left: 50px;">Name : {{info.name}}</p>
+          <p style="margin-left: 50px;">Phone : {{info.phone}}</p>
+          <p style="margin-left: 50px;">Address : {{info.address}}</p>
+        </div>
+        <div class="col-4">
+          <p style="margin-left: 20px;">Date: {{info.date}}</p>
+          <p style="margin-left: 20px;">Invoice No. : {{info.id}}</p>
+          <p style="margin-left: 20px;">ID User : {{info.cusid}}</p>
+        </div>
+      </div>
+      <div class="row" style="text-align: center ; justify-content: center;padding: 15px;" >
+        <table >
+          <tr style="border:1px solid;">
+            <th>#</th>
+            <th>List</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+          </tr>
+          <tr *ngFor="let list of  this.listfood,let i =index; ">
+            <td>{{i+1}}</td>
+            <td style="text-align: left;">{{list.name}}</td>
+            <td>{{list.amount}}</td>
+            <td>{{list.price}}</td>
+            <td>{{list.amount*list.price}}</td>
+          </tr>
+
+        </table>
+      </div>
+      <div class="row" style="margin-top: 10px;">
+        <div class="col-9">
+        <p style="text-align: right; margin-right:-55px ; ">total food: {{info.total}}</p>
+      </div>
+      </div>
+      <div class="row" >
+        <div class="col-9">
+        <p style="text-align: right; margin-right:-40px ; ">Shipping: {{15}}</p>
+      </div>
+      </div>
+      <div class="row" >
+        <div class="col-9">
+        <p style="text-align: right; margin-right:-20px ; ">Total: {{info.total+15}}</p></div>
+      </div>
+    </mat-card>
+  </div>
+
+</div>
+
+

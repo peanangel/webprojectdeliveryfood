@@ -1,0 +1,56 @@
+<div class="container">
+  <!-- <div style="margin-top: 100px; align-items: center;">
+    <input class="input2 sizeinput2" style="font-size: 20px; width: 500px; height: 37px;" type="text" placeholder="ค้นหา">
+    <button class="button">
+      <img style="width: 26px; height: 27px; background-color: rgb(246, 147, 18);" src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="">
+    </button>
+  </div> -->
+  <div class="row" style="margin-top: 50px;">
+    <span class="font">รายการสั่งอาหาร</span>
+    <div style="margin-top: 20px;  width: 300px;">
+      <mat-menu #menu="matMenu"style="width: 700px;"class="typebutton">
+        <button mat-menu-item (click)="findAll()" >ทั้งหมด</button>
+        <button mat-menu-item value="{{statuses.status}}" *ngFor="let statuses of this.statuses" (click)="findByStatus(statuses)">{{statuses.status}}</button>
+      </mat-menu>
+      <button  mat-flat-button
+    [matMenuTriggerFor]="menu"
+    style="background-color:white; color: rgb(245, 149, 6) ;margin: 10px;">
+      status
+    </button>
+    </div>
+    <div style="margin-top: 100px;" style="text-align: center;">
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class="col col-1">#</div>
+          <div class="col col-2">Name</div>
+          <div class="col col-3">Address</div>
+          <div class="col col-4">date</div>
+          <div class="col col-5">Total</div>
+          <div class="col col-6">Status</div>
+          <div class="col col-7">information</div>
+        </li>
+
+        <li class="table-row" *ngFor="let list of this.listorder;">
+          <div class="col col-1">{{list.id}}</div>
+          <div class="col col-2">{{list.name}}</div>
+          <div class="col col-3"> {{list.address}}</div>
+          <div class="col col-4">{{list.date}}</div>
+          <div class="col col-5">{{list.total+15}}</div>
+          <div class="col col-6">
+            <select name="status" #status>
+              <option *ngFor="let status of statuses;" value="{{status.ids}}" [selected]="list.status == status.status" >{{status.status}}</option>
+            </select>
+            <button style="margin-left: 5px;background-color: antiquewhite;" mat-button (click)="updateStatus(status.value,list.id)">
+              submit
+            </button>
+          </div>
+          <div class="col col-7" style="text-align: center;">
+            <button [routerLink]="['/mainowner', { outlets: { shopowneroutlet: ['information']} }]" (click)="getId(list)">
+              <img  style="width: 25px;"  src="https://cdn-icons-png.flaticon.com/512/545/545674.png" alt="">
+            </button>
+
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>

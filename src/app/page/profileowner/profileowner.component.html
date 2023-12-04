@@ -1,0 +1,33 @@
+<div class="container" style="margin-top: 50px;">
+  <div class="row" style="justify-content: center;">
+    <mat-card class="card" style="margin-top: 70px;" *ngFor="let owner of this.owner">
+      <div class="row">
+        <div style="text-align: center;">
+          <h1 style="font-size: 35px; margin-top: 10px;">Information</h1>
+        </div>
+        <hr>
+        <div class="row" style="margin-top: 40px; margin-left: 110px;">
+          <!-- <div class="col-6">
+            <span class="fontsize2">Id : </span>
+            <span class="fontsize">{{owner.cid}}</span>
+          </div> -->
+          <div class="col-6">
+            <span class="fontsize2">Name : </span>
+            <span class="fontsize">{{owner.name}}</span>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 40px; margin-left: 110px;">
+          <div class="col-6">
+            <span class="fontsize2">Email : </span>
+            <span class="fontsize">{{owner.email}}</span>
+          </div>
+          <div class="col-6" >
+            <span class="fontsize2">Phone : </span>
+            <span class="fontsize">{{owner.phone}}</span>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+

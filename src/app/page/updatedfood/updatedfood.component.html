@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <label style="width: 400px; margin-top: 100px; margin-left: 30%; font-size: 25px; font-weight: bold; color: rgb(246, 147, 18);">แก้ไขข้อมูลอาหาร</label>
+    <div class="col-6" style="margin-top: 30px; margin-left: 30%;">
+      <label class="fontSize" style="margin-top: 10px; width: 70px;">Name</label>
+      <input value="{{this.food.name}}" class="input2 sizeinput2" type="text" placeholder="Name"  #name>
+      <div class="row">
+
+        <div class="col-7">
+          <div class="row">
+            <label class="fontSize" style="margin-top: 10px; width: 70px;">Type</label>
+          </div>
+          <div class="row">
+            <span>
+              <select name = "type" #type style=" margin-top: 10px; width: 200px; height: 40px; font-size: 18px; border-radius: 10%;">
+                <option  *ngFor="let typefood of types" value="{{typefood.typeid}}"[selected]="this.food.type==typefood.type">{{typefood.type}}</option>
+              </select>
+              <button class="button" style="margin-left: 4%;">
+                <span (click)="addNew()" class="spanbutton">เพิ่มประเภทอาหาร</span>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div class="col-5">
+          <div class="row">
+            <label class="fontSize" style="margin-top: 10px; width: 50px;">Price</label>
+          </div>
+          <div class="row">
+            <input value="{{this.food.price}}" class="input2" style="width: 207px; height: 50px;"  #price type="text">
+          </div>
+
+        </div>
+
+      </div>
+
+      <label class="fontSize" style="margin-top: 10px; width: 400px;"  >Image</label>
+      <input value="{{this.food.image}}" class="input2" style="width: 578px; height: 50px;" type="text"  #image placeholder="Image (URL)">
+
+      <label class="fontSize" style="margin-top: 10px; width: 70px;">Description</label>
+      <input value="{{this.food.description}}" class="input2" style="width: 578px; height: 50px;" type="text" placeholder="Description"  #description>
+
+      <button class="button" style="margin-left: 77%; margin-top: 10px;" (click)="save(name.value,description.value,image.value,+price.value,+type.value)">
+        <span class="spanbutton">Save</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+

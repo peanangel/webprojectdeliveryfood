@@ -1,0 +1,120 @@
+<app-header></app-header>
+<div class="container" style="margin-top: 30px;">
+  <button class="button">
+    <span [routerLink]="['/firstpage', { outlets: { shopoutlet: ['cartfood']} }]" class="spanbutton">back</span>
+  </button>
+  <div class="row" style="margin-top: 40px;">
+    <span style="font-size: 25px; font-weight: bold; color: rgb(246, 147, 18);">Billing details</span>
+    <div class="col-6">
+      <form #saveForm="ngForm" (ngSubmit)="save()">
+        <div class="form-group">
+          <label class="fontSize" style="width: 200px; margin-top: 10px;">Name</label>
+          <input type="text" class="form-control" [ngClass]="{'is-invalid':name.touched && name.invalid}" id="name" placeholder="Name" name="name" #name="ngModel" [(ngModel)]="model.name" required>
+
+          <label class="fontSize" style="margin-top: 10px;">Address</label>
+          <input type="text" class="form-control" [ngClass]="{'is-invalid':address.touched && address.invalid}" id="address" placeholder="Address" name="address" #address="ngModel" [(ngModel)]="model.address" required>
+
+          <label class="fontSize" style="margin-top: 10px;">Phone number</label>
+          <input  type="text" class="form-control" [ngClass]="{'is-invalid':phone.touched && phone.invalid}" id="phone" placeholder="Phone" name="phone" #phone="ngModel" [(ngModel)]="model.phone" required>
+          <button [disabled]="saveForm.invalid" class="button" style="margin-top: 10px; width: 80px; margin-left: 555px;" >
+            <span class="spanbutton" style="margin-left: 12px;">Save</span>
+          </button>
+        </div>
+      </form>
+      <div class="row" style="width: 650px; margin-top: 20px;">
+        <mat-card class="crad">
+          <mat-radio-group>
+            <p class="input sizeinput" style="margin-left: 41%; color: rgb(255, 0, 0);" >โปรดใส่จำนวนเงินให้พอดี</p>
+            <div class="radio">
+              <label class="fontSize" style="width: 220px;">รวมทั้งสิ้น(บาท)</label>
+              <input class="input sizeinput" type="text" name="total" #firstname value="{{this.total+15}}" style="text-align: right;" readonly>
+            </div>
+            <div class="radio">
+              <label class="fontSize" style="width: 220px;">รับเงินมา(บาท)</label>
+              <input class="input sizeinput" style="text-align: right;" type="number" name="" (keyup)="onKey($event)" #firstname>
+              <p class="input sizeinput" *ngIf="this.chk<0" style="margin-left: 41%; color: rgb(255, 0, 0);" >not enough money </p>
+              <!-- <p class="input sizeinput" *ngIf="this.chk===NaN" style="margin-left: 50PX; color: rgb(255, 0, 0);" >not enough money </p> -->
+            </div>
+            <div class="radio">
+              <label class="fontSize" style="width: 220px;">ขาด/เกิน(บาท)</label>
+              <input class="input sizeinput" style="text-align: right;" type="text" name="" value="{{this.chk}}" #firstname>
+            </div>
+          </mat-radio-group>
+          <div class="col-12" style="margin-top: 40px;">
+            <button [disabled]="this.allow" (click)="payBill()" class="button" style="position: absolute; right: 50px;" >
+              <span class="spanbutton">Place Order</span>
+            </button>
+          </div>
+        </mat-card>
+    </div>
+
+    </div>
+    <div class="col-6">
+      <span style="font-size: 25px; font-weight: bold;  color: rgb(246, 147, 18);">Your order</span>
+    <mat-card >
+      <mat-list>
+        <mat-list-item>
+          <div class="row">
+            <div class="col-8" style=" width: 350px;">
+              <span class="fontlist">Product</span>
+            </div>
+            <div class="col-4" style=" width: 180px;">
+              <span class="fontlist" >Subtotal</span>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-list-item *ngFor="let item of this.carts">
+          <div class="row">
+            <div class="col-8" style="width: 350px;">
+              <span style="font-size: 18px;">{{item.name}} x{{item.amount}}</span>
+            </div>
+            <div class="col-4" style=" width: 180px;">
+              <span class="fontlist">{{item.amount*item.price}}</span>
+            </div>
+          </div>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+        <mat-list-item >
+          <div class="row">
+            <div class="col-8" style=" width: 350px;">
+              <span class="fontlist">Subtotal</span>
+            </div>
+            <div class="col-4" style=" width: 180px;">
+              <span class="fontlist">{{this.total}}</span>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <div class="row">
+            <div class="col-8" style=" width: 350px;">
+              <span class="fontlist">Shipping</span>
+            </div>
+            <div class="col-4" style=" width: 180px;">
+              <span class="fontlist">Flat rate: 15</span>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item >
+          <div class="row">
+            <div class="col-8" style=" width: 350px;">
+              <span class="fontlist">Total</span>
+            </div>
+            <div class="col-4" style=" width: 180px;">
+              <span class="fontlist">{{this.total+15}}</span>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+      </mat-list>
+    </mat-card>
+    </div>
+  </div>
+  <br>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,50 @@
+.fontSize{
+  font-size: 18px;
+}
+.input{
+  border-radius: 4px;
+}
+.input2{
+  border-radius: 4px;
+}
+.sizeinput{
+  width: 250px;
+  height: 40px;
+}
+.sizeinput2{
+  width: 578px;
+  height: 40px;
+}
+.fontlist{
+  font-size: 18px;
+  font-weight: bold;
+}
+.crad{
+  height: 320px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 8px;
+}
+.radio {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+.button{
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  align-items: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  background-color: rgb(246, 147, 18);
+  border-radius: 10px;
+}
+.button:hover{
+  background-color: rgb(255, 191, 0);
+}
+.spanbutton{
+  display: flex;
+  justify-content: space-between;
+}

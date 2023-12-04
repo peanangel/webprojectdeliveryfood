@@ -1,0 +1,56 @@
+<div class="contianer-fluid" >
+  <div class="row" >
+  <div style="color: whitesmoke; font-size: 30px; margin-top: 200px; margin-left: 190px; ">
+    <span routerLink="/" style="cursor: pointer;" class="sline-in">Home /</span><span>&nbsp;detail</span>
+  </div>
+</div>
+</div>
+
+  <mat-card class="example-card">
+    <mat-card-content style="border-radius: 2%;">
+      <div>
+      <div class="row" >
+        <!-- ภาพตัวอย่าง -->
+        <div class="col-3 img">
+          <img class="img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=481&q=80" alt="">
+        </div>
+        <!-- ข้อมูล -->
+        <div class="col-9" style="line-height: 2; margin-left: 60px; width: 500px;">
+          <span style="font-size: 30px; font-weight: bold; margin-top: 25px;">Pizza</span><hr>
+          <div class="fontcard">
+            <span>ประเภท : อาหารจานเดียว</span>
+          </div>
+          <div class="fontcard">
+            <p>ความเป็นมาของพิซซ่า ตำนานที่ 2 เชื่อว่ากำเนิดของพิซซ่ามาจากเหตุบังเอิญในการประกอบ
+              อาหาร เพราะพ่อครัวลืมนำขนมปังแผ่นกลมแบนออกจากเตาอบทำให้แป้งกรอบและมีกลิ่นหอม ชาวกรีกมักจะรับประทานขนมปังแบบนี้โดยฉีกเป็นชิ้น แล้วจิ้มกับน้ำมันมะกอกและเกลือ</p>
+          </div>
+          <hr>
+          <div class="fontcard">
+            <span>ราคา : 239 บาท</span>
+          </div>
+          <div class="fontcard" style="margin-top: -5px;">
+            <span>จำนวน</span>
+            <mat-form-field class="matform">
+              <input class="input" matInput value="1" #message type="number">
+            </mat-form-field>
+
+              <button (click)="openDialog()" class="button">
+                <span class="spanbutton">
+                  <div style="flex-direction: column;">
+                    <div style="flex-direction: row; justify-content: center;">
+                      <mat-icon  class="coloricon" style="margin-right: 10px;">shopping_cart</mat-icon>
+                      Add to cart
+                    </div>
+
+
+                  </div>
+
+                </span>
+              </button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+

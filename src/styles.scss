@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+
+*{
+  font-family: 'Prompt', sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Prompt', sans-serif; }
+.fxLayout{
+  position: relative;
+  display: flex;
+}
+
+button:disabled{
+  cursor: not-allowed;
+}
+

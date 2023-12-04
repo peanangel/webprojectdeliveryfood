@@ -1,0 +1,29 @@
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Hello World.</h1>
+		</div>
+	</div>
+
+		<div class="right">
+		<h5>Login</h5><br>
+		<p style="margin-top:30px ;">Don't have an account? <a [routerLink]="['/signupowner']">Creat Your Account</a> it takes less than a minute</p>
+
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+
+		<div class="form-group inputs">
+			<input  id='email' class="form-control " [ngClass]="{'is-invalid':email.touched&& email.invalid}" type="email" placeholder="Enter your email" name="email" #email="ngModel" [(ngModel)]="model.email" required email>
+      <span class="invalid-feedback"></span>
+			<br>
+			<input id='password' class="form-control" [ngClass]="{'is-invalid':password.touched && password.invalid}"  type="password" placeholder="password" name="password" #password="ngModel" [(ngModel)]="model.password" required>
+      <span class="invalid-feedback">password can't be blank.</span>
+    </div>
+			<br><br>
+			<br>
+    <div style="float: right;">
+      <button style="margin-right: 20px;" routerLink="/">Back</button>
+			<button [disabled]="loginForm.invalid">Login</button>
+    </div>
+  </form>
+	</div>
+</div>

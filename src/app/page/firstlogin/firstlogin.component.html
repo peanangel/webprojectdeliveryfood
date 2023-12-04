@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row" style="width: 100%; justify-content: center; ">
+    <mat-card class="card">
+      <div style="align-items: center;">
+        <mat-icon class="icon">fastfood</mat-icon>
+        <span style="color: rgb(245, 149, 6); font-size: 34px; font-weight: bold;">&nbsp;Food deliver</span>
+      </div>
+      <div style="margin-top: 50px; width: 300px; height: 170px; justify-content: center; align-items: center;">
+        <label class="label">Choose Character</label>
+        <mat-card-actions style="width: 100%; align-items: center; justify-content: center; margin-top: 20px; ">
+          <button mat-button style="height: 50px;"
+          [routerLink]="['/customer']"
+          >
+            Customer
+          </button>
+        </mat-card-actions>
+        <hr data-content="or" class="hr-text">
+        <mat-card-actions style="width: 100%; align-items: center; justify-content: center; margin-top: 15px;">
+          <button mat-button style="height: 50px;"
+          [routerLink]="['/owner']"
+          >
+            Owner
+          </button>
+        </mat-card-actions>
+      </div>
+    </mat-card>
+  </div>
+  </div>

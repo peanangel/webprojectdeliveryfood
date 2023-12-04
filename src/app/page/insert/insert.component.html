@@ -1,0 +1,11 @@
+<div style="display: flex; flex-direction: column;
+height: 160px; width: 250px; margin: 20px;  border-radius:5px;">
+  <p style="font-size: 25px;">เพิ่มประเภทอาหารใหม่</p>
+  <label style="font-size: 18px;">ชื่อประเภทอาหาร</label>
+  <input style=" border-radius:5px;" type="text" name="type" #type id="type" >
+  <span style="margin-top: 20px;">
+    <button [mat-dialog-close]="true" type="button" style="margin-left: 40px;" (click)="addType(type.value)">AddNew</button>
+    <button [mat-dialog-close]="true" style="margin-left: 7px;">cancel</button>
+  </span>
+
+</div>

@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div style="margin-top: 100px; align-items: center;">
+    <input #name class="input2 sizeinput2" style="font-size: 20px; width: 500px; height: 37px;" type="text" placeholder="ค้นหา">
+    <button class="button" (click)="findByName(name.value)">
+      <img style="width: 26px; height: 27px; background-color: rgb(246, 147, 18);" src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="">
+    </button>
+  </div>
+  <label style="margin-top: 50px; font-size: 25px; font-weight: bold; color: rgb(246, 147, 18);">Food</label>
+  <div style="width: 200px; font-weight: bold; font-size: 30px; margin-top: 20px;  width: 300px;">
+    <mat-menu #menu="matMenu"style="width: 700px;"class="typebutton" selected>
+      <button mat-menu-item (click)="findAll()" #button value="all">ทั้งหมด</button>
+      <button mat-menu-item  *ngFor="let typefood of this.types" value="{{typefood.type}}" #button (click)="findByType(typefood.type)">{{typefood.type}}</button>
+    </mat-menu>
+    <button  mat-flat-button
+    [matMenuTriggerFor]="menu"
+    style="background-color:white; color: rgb(245, 149, 6) ;margin: 10px;">
+      ประเภท
+    </button>
+  </div>
+  <div style="margin-top: 50px;" style="text-align: center;">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">#</div>
+      <div class="col col-2">Image</div>
+      <div class="col col-3">Name</div>
+      <div class="col col-4">price</div>
+      <div class="col col-5">Edit</div>
+      <div class="col col-6">delete</div>
+    </li>
+
+    <li class="table-row" *ngFor="let selectedFood of this.foods;let i =index;">
+      <div class="col col-1" >{{i+1}}</div>
+      <div class="col col-2" ><img style="width: 200px; " src="{{selectedFood.image}}" alt=""></div>
+      <div class="col col-3" >  {{selectedFood.name}}</div>
+      <div class="col col-4">{{selectedFood.price}}</div>
+      <div class="col col-5" (click)="edit(selectedFood)"><img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/1827/1827951.png " alt=""></div>
+      <div class="col col-6" (click)="deleteFood(selectedFood.foodid)"><img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/3096/3096673.png" alt=""></div>
+    </li>
+  </ul>
+</div>
+</div>
